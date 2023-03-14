@@ -22,12 +22,24 @@ public class Main {
             for (int i = 0; i < n; i++) {
                 System.out.print("Titolo del libro n " + (i+1)  +"° : ");
                 String titolo = scan.nextLine();
+                if (titolo.isEmpty()){
+                    throw new IllegalArgumentException("Titolo non valido eddaje");
+                }
                 System.out.print("numero di pagine: ");
                 int numPagine = Integer.parseInt(scan.nextLine());
+                if (numPagine <= 0 ){
+                    throw new IllegalArgumentException("numero non valido");
+                }
                 System.out.print("autore: ");
                 String autore = scan.nextLine();
+                if (autore.isEmpty()){
+                    throw new IllegalArgumentException("Autore non valido SVEGLIATI!");
+                }
                 System.out.print("editore: ");
                 String editore = scan.nextLine();
+                if (editore.isEmpty()){
+                    throw new IllegalArgumentException("e io non ti valido editore! gne gne");
+                }
                 Book p = new  Book(titolo,numPagine, autore,editore );
                 System.out.println("************ * *************");
                 list[i] = p;
